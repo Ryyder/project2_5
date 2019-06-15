@@ -4,8 +4,6 @@ DROP DATABASE IF EXISTS student_db;
 -- Creates the "student_db" database --
 CREATE DATABASE student_db;
 
-USE student_db;
-
 -- CREATE TABLE students (
 --   id INT NOT NULL AUTO_INCREMENT,
 --   first_name VARCHAR(50) NOT NULL,

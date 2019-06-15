@@ -1,10 +1,6 @@
+/* eslint-disable camelcase */
 module.exports = function(sequelize, DataTypes) {
-  var cipTable = sequelize.define("cipTable", {
-    /* id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    }, */
+  var CipTable = sequelize.define("CipTable", {
     cip_code: {
       type: DataTypes.DECIMAL(6, 4),
       allowNull: false
@@ -16,21 +12,17 @@ module.exports = function(sequelize, DataTypes) {
     stem: {
       type: DataTypes.BOOLEAN,
       allowNull: false
-    },
-    createdAt: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
-    updatedAt: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
     }
   });
 
-  /* cipTable.associate = function(models) {
-    cipTable.hasMany(models.Students, {
-      onDelete: "cascade"
+  CipTable.associate = function(models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    CipTable.belongsTo(models.Student, {
+      foreignKey: {
+        allowNull: false
+      }
     });
-  }; */
-  return cipTable;
+  };
+  return CipTable;
 };
