@@ -1,0 +1,70 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+
+#page {
+  display: flex;
+}
+
+.newUserInfo {
+  width: 500px;
+  margin-right: 75px
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.help:hover,.faqHeader:hover,.faqLink:hover {
+  color: #777777;
+}
+
+.userSubmit {
+  width: 300px;
+  margin-top: 10x;
+}
+
+.userPic {
+  font-size: 8em;
+  border: 10px solid black;
+  border-radius: 50%;
+  padding: 30px;
+  position: relative;
+  bottom: -25px;
+  background-color: white;
+}
+
+.dashHeader {
+  padding: 0px;
+}
+
+.copy {
+  font-size: 12px;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.stuInfo {
+  border: 10px solid lightgrey;
+  border-radius: 25px;
+  text-align: center;
+  margin: 20px;
+}
+
+.faq {
+  text-align: center;
+}
+
+.update {
+  font-size: 12px;
+}
+
+.updateBanner {
+  padding: 25px;
+}
+
+.links {
+  line-height: 50%;
+}
