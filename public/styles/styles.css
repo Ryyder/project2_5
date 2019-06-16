@@ -68,3 +68,11 @@ img {
 .links {
   line-height: 50%;
 }
+
+.invalid {
+  border-color: red;
+}
+
+.valid {
+  border-color: green;
+}
