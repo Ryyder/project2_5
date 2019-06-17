@@ -16,7 +16,7 @@ module.exports = function(app) {
 
   // // new user route loads user creation page
   app.get("/newuser", function(req, res) {
-    /* console.log(req.session); */
+    console.log(req.session);
     res.cookie("user" + req.session);
     res.sendFile(path.join(__dirname, "../public/newUser.html"));
   });
@@ -24,7 +24,7 @@ module.exports = function(app) {
   // dashboard route loads user info page
   app.get("/dashboard", function(req, res) {
     console.log("i hit 'dashboard'");
-    /* console.log(req.session);  */
+    console.log(req.session);
     /* console.log("user id is: " + req.session.passport.user.id); */  
     res.cookie("user" + req.session.passport.user.id);
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
