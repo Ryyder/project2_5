@@ -47,52 +47,92 @@ $("#submit").on("click", function(event) {
     // email address validation
     $("#email").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please enter a valid email address.");
+        errorMessage += "Email Address \n";
+        // alert("Please enter a valid email address.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     //phone number validation
     $("#phone").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please enter your phone number.");
+        errorMessage += "Phone Number \n";
+        // alert("Please enter your phone number.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     $("#schoolName").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please enter the name of your school.");
+        errorMessage += "School Name \n";
+        // alert("Please enter the name of your school.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     $("#termType").each(function() {
       if ($(this).val() === "Select One") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please select your school's academic term type.");
+        errorMessage += "Academic Term Type \n";
+        // alert("Please select your school's academic term type.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     $("#startDate").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please select your start date as listed on your I-20.");
+        errorMessage += "Start Date \n";
+        // alert("Please select your start date as listed on your I-20.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     $("#endDate").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please select your end date as listed on your I-20.");
+        errorMessage += "End Date \n";
+        // alert("Please select your end date as listed on your I-20.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     $("#edLvl").each(function() {
       if ($(this).val() === "Select One") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please select your education level.");
+        errorMessage += "Education Level \n";
+        // alert("Please select your education level.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     //cip code validation
     $("#cipCode").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please enter your CIP Code.");
+        errorMessage += "CIP Code";
+        // alert("Please enter your CIP Code.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     return isValid;
