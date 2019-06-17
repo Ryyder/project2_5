@@ -1,5 +1,9 @@
 /* var moment = require("moment"); */
 
+var x = document.cookie;
+
+console.log(x);
+
 //pull data from db and display in our stuInfo container
 $.ajax({
   url: "api/students/2", //pull this id from the database

@@ -1,4 +1,8 @@
 /* eslint-disable camelcase */
+var x = document.cookie;
+
+console.log(x);
+
 //grab user info and post to our updateUser page
 function getUser() {
   $.ajax({

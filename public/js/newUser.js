@@ -1,18 +1,9 @@
 // Add event listeners to the submit and delete buttons
 /* var studentGoogObj = require("../../routes/googleRoutes/auth-routes.js");
 console.log(studentGoogObj); */
+var x = document.cookie.googleId;
 
-
-function getUser() {
-  $.ajax({
-    url: "auth/google/callback",
-    type: "GET"
-  }).then(function(res) {
-    console.log(res);
-  }); 
-}
-
-getUser();
+console.log(x);
 
 var onlyLetters = function(keyStroke) {
   return /^[a-zA-Z ]+$/.test(keyStroke);

@@ -44,6 +44,7 @@ module.exports = function(app) {
         db.Students.findOrCreate({ where: { googleId: profile.id } })
           .then(function (user) {
             console.log("===== FOUND THE USER IN OUR DB! =======");
+            console.log("testing user id: " + user);
             console.log("User id: " + user[0].id); // this is the user id (as it is found in our db)
             return done(null, {
               profile: profile,

@@ -15,9 +15,11 @@ app.use(express.static("public"));
 
 app.use(cookieSession({
   name: "session",
-  keys: ["123"]
+  keys: ["123"],
+  cookie: {secure: true}
 }));
 app.use(cookieParser());
+
 
 // Google Routes
 require("./config/passport-setup.js")(app);
