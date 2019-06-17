@@ -5,24 +5,25 @@ var x = document.cookie.googleId;
 
 console.log(x);
 
-var onlyLetters = function(keyStroke) {
+var onlyLetters = function (keyStroke) {
   return /^[a-zA-Z ]+$/.test(keyStroke);
 };
 
-$("#lastName, #firstName, #schoolName").on("keypress", function(event) {
+$("#lastName, #firstName, #schoolName").on("keypress", function (event) {
   if (!onlyLetters(event.key)) {
     event.preventDefault();
   }
 });
 
-$("#submit").on("click", function(event) {
+$("#submit").on("click", function (event) {
   event.preventDefault();
   console.log(event);
 
   // Form validation
   function validateForm() {
     var isValid = true;
-    $("#lastName").each(function() {
+    var errorMessage = "";
+    $("#lastName").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -33,7 +34,7 @@ $("#submit").on("click", function(event) {
         $(this).addClass("valid");
       }
     });
-    $("#firstName").each(function() {
+    $("#firstName").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -45,7 +46,7 @@ $("#submit").on("click", function(event) {
       }
     });
     // email address validation
-    $("#email").each(function() {
+    $("#email").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -57,7 +58,7 @@ $("#submit").on("click", function(event) {
       }
     });
     //phone number validation
-    $("#phone").each(function() {
+    $("#phone").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -68,7 +69,7 @@ $("#submit").on("click", function(event) {
         $(this).addClass("valid");
       }
     });
-    $("#schoolName").each(function() {
+    $("#schoolName").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -79,7 +80,7 @@ $("#submit").on("click", function(event) {
         $(this).addClass("valid");
       }
     });
-    $("#termType").each(function() {
+    $("#termType").each(function () {
       if ($(this).val() === "Select One") {
         $(this).addClass("invalid");
         isValid = false;
@@ -90,7 +91,7 @@ $("#submit").on("click", function(event) {
         $(this).addClass("valid");
       }
     });
-    $("#startDate").each(function() {
+    $("#startDate").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -101,7 +102,7 @@ $("#submit").on("click", function(event) {
         $(this).addClass("valid");
       }
     });
-    $("#endDate").each(function() {
+    $("#endDate").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -112,7 +113,7 @@ $("#submit").on("click", function(event) {
         $(this).addClass("valid");
       }
     });
-    $("#edLvl").each(function() {
+    $("#edLvl").each(function () {
       if ($(this).val() === "Select One") {
         $(this).addClass("invalid");
         isValid = false;
@@ -124,7 +125,7 @@ $("#submit").on("click", function(event) {
       }
     });
     //cip code validation
-    $("#cipCode").each(function() {
+    $("#cipCode").each(function () {
       if ($(this).val() === "") {
         $(this).addClass("invalid");
         isValid = false;
@@ -135,7 +136,11 @@ $("#submit").on("click", function(event) {
         $(this).addClass("valid");
       }
     });
-    return isValid;
+    if (errorMessage !== "") {
+      alert("Please complete the following fields:" + errorMessage);
+    } else {
+      return isValid;
+    }
   }
 
   if (validateForm()) {
@@ -193,7 +198,7 @@ $("#submit").on("click", function(event) {
       url: "/api/students",
       type: "POST",
       data: JSON.stringify(newStudent)
-    }).then(function(res) {
+    }).then(function (res) {
       console.log(res);
       console.log("info saved to database");
     });
