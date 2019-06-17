@@ -14,6 +14,16 @@ function getUser() {
 
 getUser();
 
+var onlyLetters = function(keyStroke) {
+  return /^[a-zA-Z ]+$/.test(keyStroke);
+};
+
+$("#lastName, #firstName, #schoolName").on("keypress", function(event) {
+  if (!onlyLetters(event.key)) {
+    event.preventDefault();
+  }
+});
+
 $("#submit").on("click", function(event) {
   event.preventDefault();
   console.log(event);
@@ -23,14 +33,24 @@ $("#submit").on("click", function(event) {
     var isValid = true;
     $("#lastName").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please enter your last name.");
+        errorMessage += "Last Name \n";
+        // alert("Please enter your last name.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     $("#firstName").each(function() {
       if ($(this).val() === "") {
+        $(this).addClass("invalid");
         isValid = false;
-        alert("Please enter your first name.");
+        errorMessage += "First Name \n";
+        // alert("Please enter your first name.");
+      } else {
+        $(this).removeClass("invalid");
+        $(this).addClass("valid");
       }
     });
     // email address validation
