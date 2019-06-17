@@ -25,7 +25,7 @@ module.exports = function(app) {
   app.get("/dashboard", function(req, res) {
     console.log("i hit 'dashboard'");
     console.log(req.session); 
-    console.log("user id is: " + req.session.user.id);  
+    console.log("user id is: " + req.session.passport.user.id);  
     /* res.cookie("user" + req.session.passport.user.id); */
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
