@@ -46,7 +46,7 @@ module.exports = function(app) {
           
           console.log("i exists!");
           /* console.log(req.session); */
-          console.log(req.session.passport.user.id);
+          console.log("google id: " + req.session.passport.user.id);
           /* res.redirect("../../dashboard.html"); */
           res.redirect("https://frozen-spire-30925.herokuapp.com/dashboard");
           
@@ -56,7 +56,7 @@ module.exports = function(app) {
           
           
           console.log("i don't exist");
-          console.log(req.session.passport.user.id);
+          console.log("google id: " + req.session.passport.user.id);
           /* res.redirect("../../newUser.html"); */
           res.redirect("https://frozen-spire-30925.herokuapp.com/newUser");
           
