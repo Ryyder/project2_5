@@ -32,8 +32,8 @@ module.exports = function(app) {
       /* res.redirect("../public/newUser"); */
       /* res.json(studentGoogObj); */
       console.log(token);
-      console.log(studentGoogObj);
-      console.log(req.session);
+      console.log("My googleid is: " + studentGoogObj);
+      /* console.log(req.session); */
 
       //look up in db user google = req.user._json.sub
       db.Students.findOne({
