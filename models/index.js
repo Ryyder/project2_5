@@ -7,7 +7,6 @@ var config = require(__dirname + "/../config/config.json")[env];
 require("dotenv").config();
 var db = {};
 
-
 if (config.use_env_variable) {
   // use for heroku
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
@@ -18,9 +17,10 @@ if (config.use_env_variable) {
     config.username,
     process.env.MYSQLPASS,
     {
-      host: 'localhost',
+      host: "localhost",
       dialect: "mysql"
-    });
+    }
+  );
 }
 
 fs.readdirSync(__dirname)
