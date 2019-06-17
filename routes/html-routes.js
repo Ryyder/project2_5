@@ -25,15 +25,15 @@ module.exports = function(app) {
   app.get("/dashboard", function(req, res) {
     console.log("i hit 'dashboard'");
     /* console.log(req.session);  */
-    console.log("user id is: " + req.session.passport.user.id);  
-    /* res.cookie("user" + req.session); */
+    /* console.log("user id is: " + req.session.passport.user.id); */  
+    res.cookie("user" + req.session.passport.user.id);
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
   
   // new user route loads user info update page
   app.get("/updateUser", function(req, res) {
     console.log(req.session);
-    res.cookie("user" + req.session);
+    res.cookie("user" + req.session.passport.user.id);
     res.sendFile(path.join(__dirname, "../public/updateUser.html"));
   });
 
