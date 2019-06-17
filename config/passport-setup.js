@@ -33,7 +33,7 @@ module.exports = function(app) {
         clientID: process.env.GOOGLE_OAUTH_TEST_APP_CLIENT_ID,
         clientSecret: process.env.GOOGLE_OAUTH_TEST_APP_CLIENT_SECRET,
         callbackURL:
-          "http://localhost:8050/auth/google/callback",
+          "https://frozen-spire-30925.herokuapp.com",
         scope: ["email"]
       },
       (accessToken, refreshToken, profile, done) => {
