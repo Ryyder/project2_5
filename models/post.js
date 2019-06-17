@@ -76,14 +76,14 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Post.associate = function(models) {
+  /* Post.associate = function(models) {
     // A Post can't be created without an Student due to the foreign key constraint
     Post.belongsTo(models.Student, {
       foreignKey: {
         allowNull: false
       }
     });
-  };
+  }; */
 
   return Post;
 };
