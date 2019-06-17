@@ -1,5 +1,5 @@
 var passport = require("passport");
-// var db = require("../../models");
+var db = require("../../models");
 
 // console.log("google auth routes");
 
@@ -19,10 +19,10 @@ module.exports = function(app) {
       scope: ["profile", "email"]
     }),
     (req, res) => {
-      // var studentGoogObj = req.user._json;
+      var studentGoogObj = req.user._json;
       // console.log("wooo we authenticated, here is our user object:", req.user);
-      res.json(req.user);
-      console.log(req.user._json);
+      res.json(studentGoogObj);
+      console.log(studentGoogObj);
 
       //look up in db user google = req.user._json.sub
       // db.Students.findOne({
@@ -40,6 +40,8 @@ module.exports = function(app) {
       //   console.log(dbStudent);
       //   // res.json(dbStudent);
       // });
+  
+      
     }
   );
 };
