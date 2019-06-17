@@ -15,8 +15,7 @@ app.use(express.static("public"));
 
 app.use(cookieSession({
   name: "session",
-  keys: ["123"],
-  cookie: {secure: true}
+  keys: ["123"]
 }));
 app.use(cookieParser());
 
