@@ -10,7 +10,7 @@ module.exports = function(app) {
     // console.log(path.join(__dirname, "../public/login.html"));
     //if user is authenticated send to new user page
     /* console.log(req.session); */
-    res.cookie("user" + req.session.passport.user.id);
+    /* res.cookie("user" + req.session.passport.user.id); */
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
