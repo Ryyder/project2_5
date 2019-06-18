@@ -10,7 +10,7 @@ $.ajax({
   type: "GET"
 }).then(function(res) {
   console.log(res);
-  $("firstNameDisplay").append(res.firstname);
+  $("#firstNameDisplay").append(res.firstname);
   $("#schoolNameDisplay").append(res.school_name);
   $("#edLvlDisplay").append(res.ed_level);
   $("#majorDisplay").append(res.cip_code_one);
