@@ -141,6 +141,7 @@ $("#submit").on("click", function (event) {
     } else {
       return isValid;
     }
+
   }
 
   if (validateForm()) {
@@ -201,6 +202,7 @@ $("#submit").on("click", function (event) {
     }).then(function (res) {
       console.log(res);
       console.log("info saved to database");
+      window.location.href="https://frozen-spire-30925.herokuapp.com/dashboard";
     });
   }
 });
