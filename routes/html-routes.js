@@ -17,7 +17,7 @@ module.exports = function(app) {
   // // new user route loads user creation page
   app.get("/newuser", function(req, res) {
     console.log(req.session);
-    res.cookie("user" + req.session);
+    /* res.cookie("user" + req.session); */
     res.sendFile(path.join(__dirname, "../public/newUser.html"));
   });
   
@@ -26,14 +26,14 @@ module.exports = function(app) {
     console.log("i hit 'dashboard'");
     console.log(req.session);
     /* console.log("user id is: " + req.session.passport.user.id); */  
-    res.cookie("user" + req.session.passport.user.id);
+    /* res.cookie("user" + req.session.passport.user.i); */
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
   
   // new user route loads user info update page
   app.get("/updateUser", function(req, res) {
     console.log(req.session);
-    res.cookie("user" + req.session.passport.user.id);
+    /* res.cookie("user" + req.session.passport.user.id); */
     res.sendFile(path.join(__dirname, "../public/updateUser.html"));
   });
 
