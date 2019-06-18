@@ -27,11 +27,13 @@ module.exports = function(app) {
     }),
     (req, res) => {
       var studentGoogObj = req.user.profile.id;
-      var token = req.session.token = req.user.token;
-
+      req.session.token = req.user.token;
+      req.session.userid = req.user.id; 
+      console.log(req.session.userid);
       /* res.redirect("../public/newUser"); */
       /* res.json(studentGoogObj); */
       console.log(token);
+
       console.log("My googleid is: " + studentGoogObj);
       /* console.log(req.session); */
 
