@@ -219,6 +219,7 @@ $("#updateInfo").on("click", function (event) {
       type: "PUT",
       data: JSON.stringify(updateUser)
     }).then(getUser);
+    window.location.href="https://frozen-spire-30925.herokuapp.com/dashboard";
   }
 });
 
@@ -231,7 +232,7 @@ $("#userDelete").on("click", function (event) {
     type: "DELETE"
   }).then(function () {
     console.log("deleting user");
-    window.location.href="https://frozen-spire-30925.herokuapp.com/dashboard";
+    window.location = "/";
   });
 });
 
