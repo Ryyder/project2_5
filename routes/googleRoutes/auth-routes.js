@@ -32,7 +32,7 @@ module.exports = function(app) {
       console.log(req.session.userid);
       /* res.redirect("../public/newUser"); */
       /* res.json(studentGoogObj); */
-      console.log(token);
+      
 
       console.log("My googleid is: " + studentGoogObj);
       /* console.log(req.session); */
