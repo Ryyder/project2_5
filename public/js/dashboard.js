@@ -6,7 +6,7 @@ console.log(x);
 
 //pull data from db and display in our stuInfo container
 $.ajax({
-  url: "api/students/2", //pull this id from the database
+  url: "api/students/6", //pull this id from the database
   type: "GET"
 }).then(function(res) {
   console.log(res);
