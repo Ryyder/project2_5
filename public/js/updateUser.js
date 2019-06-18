@@ -231,7 +231,7 @@ $("#userDelete").on("click", function (event) {
     type: "DELETE"
   }).then(function () {
     console.log("deleting user");
-    window.location = "/";
+    window.location.href="https://frozen-spire-30925.herokuapp.com/dashboard";
   });
 });
 
