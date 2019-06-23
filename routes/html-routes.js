@@ -16,32 +16,24 @@ module.exports = function(app) {
 
   // // new user route loads user creation page
   app.get("/newuser", function(req, res) {
-    console.log(req.session);
-    /* console.log("token", req.session.token); */
-    /* console.log("user" + req.session.id); */
-    /* res.cookie("token", req.session.token); */
-    res.cookie("user" + req.session.passport.user.id);
+    console.log(req.session.userid);
+    res.cookie("user" + req.session.userid);
     res.sendFile(path.join(__dirname, "../public/newUser.html"));
   });
   
   // dashboard route loads user info page
   app.get("/dashboard", function(req, res) {
     console.log("i hit 'dashboard'");
-    console.log(req.session.passport.user.id);
-    /* console.log("token", req.session.token); */
-    /* console.log("user" + req.session.id); */
-    /* res.cookie("token", req.session.token); */
-    res.cookie("user" + req.session.passport.user.id);
+    console.log(req.session.userid);
+    /* console.log("user id is: " + req.session.passport.user.id); */  
+    res.cookie("user" + req.session.userid);
     res.sendFile(path.join(__dirname, "../public/dashboard.html"));
   });
   
   // new user route loads user info update page
   app.get("/updateUser", function(req, res) {
-    console.log(req.session);
-    /* console.log("token", req.session.token); */
-    /* console.log("user" + req.session.id); */
-    /* res.cookie("token", req.session.token); */
-    res.cookie("user" + req.session.passport.user.id);
+    console.log(req.session.userid);
+    res.cookie("user" + req.session.userid);
     res.sendFile(path.join(__dirname, "../public/updateUser.html"));
   });
 

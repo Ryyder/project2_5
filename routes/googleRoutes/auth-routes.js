@@ -27,11 +27,15 @@ module.exports = function(app) {
     }),
     (req, res) => {
       var studentGoogObj = req.user.profile.id;
-      var token = req.session.token = req.user.token;
+      req.session.token = req.user.token;
+      req.session.userid = req.user.id; 
+      console.log(req.session.userid);
       /* res.redirect("../public/newUser"); */
       /* res.json(studentGoogObj); */
-      console.log(token);
-      console.log(studentGoogObj);
+      
+
+      console.log("My googleid is: " + studentGoogObj);
+      /* console.log(req.session); */
 
       //look up in db user google = req.user._json.sub
       db.Students.findOne({
@@ -41,20 +45,22 @@ module.exports = function(app) {
       }).then(function(dbStudent) {
         //if user exists send to dashboard
         if (req, dbStudent) {
-          /* res.redirect("https://frozen-spire-30925.herokuapp.com/dashboard"); */
+          
           console.log("i exists!");
           /* console.log(req.session); */
-          console.log(req.session.passport.user.id);
-          res.redirect("../../dashboard.html");
+          console.log("google id: " + req.session.passport.user.id);
+          /* res.redirect("../../dashboard.html"); */
+          res.redirect("https://frozen-spire-30925.herokuapp.com/dashboard");
           
           return;
           //if user does not exists send to newuser
         } else {
           
-          /* res.redirect("https://frozen-spire-30925.herokuapp.com/newUser"); */
+          
           console.log("i don't exist");
-          console.log(req.session.passport.user.id);
-          res.redirect("../../newUser.html");
+          console.log("google id: " + req.session.passport.user.id);
+          /* res.redirect("../../newUser.html"); */
+          res.redirect("https://frozen-spire-30925.herokuapp.com/newUser");
           
           return;
         }
